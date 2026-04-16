@@ -79,10 +79,10 @@ tab1, tab2 = st.tabs(["自动扫描 (Watchlist)", "手动诊断 (Custom)"])
 
 # 功能一：自动扫描 (建议在美股开盘 1 小时后观察，此时期权定价最稳定)
 with tab1:
-    st.header("📋 LzkWatchlist 定时扫描")
+    st.header("📋 Lzk_Watchlist 定时扫描")
     if st.button("开始扫描 Watchlist"):
         try:
-            watchlist_df = pd.read_csv("LzkWatchlist.csv")
+            watchlist_df = pd.read_csv("Lzk_Watchlist.csv")
             # 假设 CSV 中第一列是 Symbol
             tickers = watchlist_df.iloc[:, 0].tolist()
             
@@ -96,7 +96,7 @@ with tab1:
                 else:
                     st.error("未找到有效的期权数据。")
         except FileNotFoundError:
-            st.warning("请确保根目录下存在 LzkWatchlist.csv 文件。")
+            st.warning("请确保根目录下存在 Lzk_Watchlist.csv 文件。")
 
 # 功能二：手动输入
 with tab2:
